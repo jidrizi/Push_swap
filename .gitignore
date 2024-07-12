@@ -1,0 +1,7 @@
+push_swap
+bin
+*.o
+*.a
+.vscode
+.DS_Store
+libft
