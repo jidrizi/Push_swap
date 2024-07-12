@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/12 15:37:02 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/12 19:12:16 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ DEPS = push_swap.h
 
 SRCS = main.c
 
-OBJS = $(SRCS:%.c=%.o)
+OBJS = $(SRCS:%.c=bin/%.o)
 
 all: $(NAME)
 
