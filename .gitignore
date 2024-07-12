@@ -4,4 +4,3 @@ bin
 *.a
 .vscode
 .DS_Store
-libft
