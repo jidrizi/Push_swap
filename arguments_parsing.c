@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 17:57:59 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 19:14:54 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	is_arg_digit(int argc, char *argv[])
 			current_char++;
 		while (argv[current_arg][current_char])
 		{
-			if (ft_isdigit(argv[current_arg][current_char]) != EXIT_SUCCESS)
+			if (ft_isdigit(argv[current_arg][current_char]) == false)
 				return (EXIT_FAILURE);
 			current_char++;
 		}
@@ -39,26 +39,22 @@ int	is_arg_digit(int argc, char *argv[])
 int	is_arg_within_int_range(int argc, char *argv[])
 {
 	int	current_arg;
+	int	size_of_arg;
 
 	current_arg = 1;
 	while (current_arg < argc)
 	{
-		if (ft_strlen(argv[current_arg]) == 11 &&
-		(ft_strncmp(argv[current_arg], "-2147483648", 11) < 0))
+		size_of_arg = ft_strlen(argv[current_arg]);
+		if (size_of_arg > 11)
 			return (EXIT_FAILURE);
-		if (ft_strlen(argv[current_arg]) == 10 &&
-			(ft_strncmp(argv[current_arg], "2147483647", 10) <= 0))
+		if (size_of_arg == 11 && 
+			(ft_strncmp(argv[current_arg], "-2147483647", 11) > 0))
 			return (EXIT_FAILURE);
-		if (ft_strlen(argv[current_arg]) > 10)
+		if (size_of_arg == 10 &&
+			(ft_strncmp(argv[current_arg], "2147483647", 10) > 0))
 			return (EXIT_FAILURE);
 		current_arg++;
 	}
 	return (EXIT_SUCCESS);
 }
 
-int ft_isdigit(int c)
-{
-	if (c < '0' || c > '9')
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-}
