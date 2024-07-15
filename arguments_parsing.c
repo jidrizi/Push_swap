@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 19:56:38 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 20:18:12 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int	is_arg_digit(int argc, char *argv[])
 	while (current_arg < argc)
 	{
 		current_char = 0;
-		if (argv[current_arg][current_char] == '-' ||
-			argv[current_arg][current_char] == '+')
+		if ((argv[current_arg][current_char] == '-'
+			|| argv[current_arg][current_char] == '+')
+			&& argv[current_arg][current_char + 1] != '\0')
 			current_char++;
 		while (argv[current_arg][current_char])
 		{
@@ -73,5 +74,16 @@ int	is_arg_duplicate(int argc, char *argv[])
 				return (EXIT_FAILURE);
 		}
 	}
+	return (EXIT_SUCCESS);
+}
+
+int	arguments_parsing(int argc, char *argv[])
+{
+	if (is_arg_digit(argc, argv) == EXIT_FAILURE)
+		return (ft_printf("Error\nOnly numbers allowed\n"), EXIT_FAILURE);
+	if (is_arg_within_int_range(argc, argv) == EXIT_FAILURE)
+		return (ft_printf("Error\nNumber out of int range\n"), EXIT_FAILURE);
+	if (is_arg_duplicate(argc, argv) == EXIT_FAILURE)
+		return (ft_printf("Error\nDuplicates\n"), EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
