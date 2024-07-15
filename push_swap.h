@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 19:14:26 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 19:21:52 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,4 @@
 int		is_arg_digit(int argc, char *argv[]);
 int		ft_isdigit(int c);
 int		is_arg_within_int_range(int argc, char *argv[]);
-
-
 #endif

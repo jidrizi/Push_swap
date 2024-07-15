@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 19:14:54 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 19:21:45 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	is_arg_digit(int argc, char *argv[])
 {
-	int current_arg;
-	int current_char;
+	int	current_arg;
+	int	current_char;
 
 	current_arg = 1;
-	
 	while (current_arg < argc)
 	{
 		current_char = 0;
@@ -47,14 +46,13 @@ int	is_arg_within_int_range(int argc, char *argv[])
 		size_of_arg = ft_strlen(argv[current_arg]);
 		if (size_of_arg > 11)
 			return (EXIT_FAILURE);
-		if (size_of_arg == 11 && 
-			(ft_strncmp(argv[current_arg], "-2147483647", 11) > 0))
+		if (size_of_arg == 11
+			&& (ft_strncmp(argv[current_arg], "-2147483647", 11) > 0))
 			return (EXIT_FAILURE);
-		if (size_of_arg == 10 &&
-			(ft_strncmp(argv[current_arg], "2147483647", 10) > 0))
+		if (size_of_arg == 10
+			&& (ft_strncmp(argv[current_arg], "2147483647", 10) > 0))
 			return (EXIT_FAILURE);
 		current_arg++;
 	}
 	return (EXIT_SUCCESS);
 }
-
