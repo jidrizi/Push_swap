@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 20:18:12 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 20:32:19 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	is_arg_duplicate(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-int	arguments_parsing(int argc, char *argv[])
+int	total_arguments_parsing(int argc, char *argv[])
 {
 	if (is_arg_digit(argc, argv) == EXIT_FAILURE)
 		return (ft_printf("Error\nOnly numbers allowed\n"), EXIT_FAILURE);
