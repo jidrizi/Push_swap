@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 19:47:19 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/15 19:56:38 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ int	is_arg_within_int_range(int argc, char *argv[])
 }
 
 //next_args becomes current_arg + 1 in the 2nd while loop
-int	is_arg_duplicate(int argc, char *argv[]) 
+int	is_arg_duplicate(int argc, char *argv[])
 {
 	int	current_arg;
 	int	next_args;
-	
+
 	current_arg = 0;
-	while (++current_arg < argc) 
+	while (++current_arg < argc)
 	{
 		next_args = current_arg;
-		while(++next_args < argc) 
-		{ 
+		while (++next_args < argc)
+		{
 			if (ft_strncmp(argv[current_arg], argv[next_args], 11) == 0)
 				return (EXIT_FAILURE);
 		}
 	}
-	return (EXIT_SUCCESS); 
+	return (EXIT_SUCCESS);
 }
