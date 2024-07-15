@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/12 19:12:16 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/15 15:00:25 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HEADER = -I libft/
 
 DEPS = push_swap.h
 
-SRCS = main.c
+SRCS = main.c arguments.c
 
 OBJS = $(SRCS:%.c=bin/%.o)
 

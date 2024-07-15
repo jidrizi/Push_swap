@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   arguments.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 15:16:17 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/15 15:06:13 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main (int argc, char *argv[])
+int	is_arg_digit(int argc, char *argv[])
 {
-	if (is_arg_digit(argc, argv) == EXIT_FAILURE)
-		return (ft_printf("Error\nOnly numbers allowed\n"), EXIT_FAILURE);
-	if (is_arg_within_limits(argc, argv) == EXIT_FAILURE)
-		return (ft_printf("Error\nNumber out of int range\n"), EXIT_FAILURE);
-	
-	return (0);
+	int i;
+	int j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) != EXIT_SUCCESS)
+				return (EXIT_FAILURE);
+			j++;
+		}
+		i++;
+	}
+	return (EXIT_SUCCESS);
+}
+
+int ft_isdigit(int c)
+{
+	if (c < '0' || c > '9')
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }
