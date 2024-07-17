@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 20:32:24 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/17 18:37:26 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@
 
 // MACROS
 
-// STRUCTS
+// TYPES
+typedef	struct s_chain_link
+{
+	int					data;
+	struct s_chain_link	*next;
+	struct s_chain_link	*prev;
+	int					id;
+}t_chain_link;
 
 // PROTOTYPES
-
-int		is_arg_digit(int argc, char *argv[]);
-int		ft_isdigit(int c);
-int		is_arg_within_int_range(int argc, char *argv[]);
-int		is_arg_duplicate(int argc, char *argv[]);
 int		total_arguments_parsing(int argc, char *argv[]);
+
 #endif

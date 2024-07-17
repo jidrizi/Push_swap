@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   x.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 18:37:21 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/17 18:35:12 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+int	*make_args_int(int argc, char *argv[])
 {
-	t_chain_link	linked_list;
+	int current_arg;
+	int *integer_args;
 
-	if (argc == 1)
-		return (EXIT_SUCCESS);
-	if (total_arguments_parsing(argc, argv) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
-	return (0);
+	current_arg = 1;
+	integer_args = (int *)ft_calloc(argc - 1, sizeof(int));
+	if (integer_args == NULL)
+		return (NULL);
+	while (current_arg < argc)
+	{
+		argv[current_arg] = ft_atoi(argv[current_arg]);
+		integer_args[current_arg - 1] = argv[current_arg];
+		current_arg++;
+	}
+	return (integer_args);
 }

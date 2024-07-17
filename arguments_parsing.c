@@ -6,13 +6,13 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/15 20:32:19 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/17 18:36:14 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_arg_digit(int argc, char *argv[])
+static int	is_arg_digit(int argc, char *argv[])
 {
 	int	current_arg;
 	int	current_char;
@@ -36,7 +36,7 @@ int	is_arg_digit(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-int	is_arg_within_int_range(int argc, char *argv[])
+static int	is_arg_within_int_range(int argc, char *argv[])
 {
 	int	current_arg;
 	int	size_of_arg;
@@ -59,7 +59,7 @@ int	is_arg_within_int_range(int argc, char *argv[])
 }
 
 //next_args becomes current_arg + 1 in the 2nd while loop
-int	is_arg_duplicate(int argc, char *argv[])
+static int	is_arg_duplicate(int argc, char *argv[])
 {
 	int	current_arg;
 	int	next_args;
