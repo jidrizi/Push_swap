@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/15 19:10:53 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/17 20:25:44 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HEADER = -I libft/
 
 DEPS = push_swap.h
 
-SRCS = main.c arguments_parsing.c utils.c
+SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c
 
 OBJS = $(SRCS:%.c=bin/%.o)
 
@@ -42,10 +42,12 @@ $(NAME): ./libft/libft.a $(OBJS)
 	$(CC) -o $(NAME) $(OBJS) $(LIB) -ldl $(HEADER) $(CFLAGS)
 
 clean :
-	rm -rf bin
+	@rm -rf bin
+	@echo "Object files removed"
 
 fclean : clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(NAME) removed"
 
 re: fclean all
 

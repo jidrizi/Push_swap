@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 18:37:26 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/17 20:27:37 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,16 @@
 // MACROS
 
 // TYPES
-typedef	struct s_chain_link
+typedef struct s_chain_link
 {
 	int					data;
 	struct s_chain_link	*next;
 	struct s_chain_link	*prev;
-	int					id;
 }t_chain_link;
 
 // PROTOTYPES
 int		total_arguments_parsing(int argc, char *argv[]);
+int		*make_args_int(int argc, char *argv[]);
+int		make_linked_list(int *integer_arguments, int argc);
 
 #endif

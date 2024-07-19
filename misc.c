@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   x.c                                                :+:      :+:    :+:   */
+/*   misc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 18:35:12 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/17 20:09:34 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 int	*make_args_int(int argc, char *argv[])
 {
-	int current_arg;
-	int *integer_args;
+	int	current_arg;
+	int	atoi_arg;
+	int	*integer_array;
 
 	current_arg = 1;
-	integer_args = (int *)ft_calloc(argc - 1, sizeof(int));
-	if (integer_args == NULL)
+	integer_array = (int *)ft_calloc(argc - 1, sizeof(int));
+	if (integer_array == NULL)
 		return (NULL);
 	while (current_arg < argc)
 	{
-		argv[current_arg] = ft_atoi(argv[current_arg]);
-		integer_args[current_arg - 1] = argv[current_arg];
+		atoi_arg = ft_atoi(argv[current_arg]);
+		integer_array[current_arg - 1] = atoi_arg;
 		current_arg++;
 	}
-	return (integer_args);
+	return (integer_array);
 }
