@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/17 20:25:44 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/19 17:46:58 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ HEADER = -I libft/
 
 DEPS = push_swap.h
 
-SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c
+SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c swaps.c\
+		pushes.c #rotations.c reverse_rotations.c
 
 OBJS = $(SRCS:%.c=bin/%.o)
 

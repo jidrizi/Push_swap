@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swaps.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/19 17:46:06 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/19 17:20:46 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/19 17:27:43 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void sa(t_chain_link *a)
 {
-	t_chain_link	*a;
-	// t_chain_link	*b;
+	int	tmp;
 
-	if (argc == 1 || argc == 2)
-		return (EXIT_SUCCESS);
-	a = (t_chain_link *)ft_calloc(1, sizeof(t_chain_link));
-	if (a == NULL)
-		return (EXIT_FAILURE);
-	if (total_arguments_parsing(argc, argv) == EXIT_FAILURE)
-		return (EXIT_FAILURE);
-	a = make_linked_list(make_args_int(argc, argv), argc);
-	if (a == NULL)
-		return (EXIT_FAILURE);
+	if (a->next == NULL || !a)
+		return ;
+	tmp = a->data;
+	a->data = a->next->data;
+	a->next->data = tmp;
+}
+void sb(t_chain_link *b)
+{
+	int	tmp;
+
+	if (b->next == NULL || !b)
+		return ;
+	tmp = b->data;
+	b->data = b->next->data;
+	b->next->data = tmp;
+}
+void ss(t_chain_link *a, t_chain_link *b)
+{
 	sa(a);
-	return (0);
+	sb(b);
 }
