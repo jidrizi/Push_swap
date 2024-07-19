@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:07:15 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/19 15:52:17 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/19 16:10:44 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,25 @@ static void	link_chainlinks(t_chain_link *current_link, t_chain_link *next_link)
 
 int	make_linked_list(int *integer_array, int argc)
 {
-	int				current_int;
-	int				link_id;
+	static int		current_int = 0;
+	static int		link_id = 0;
 	t_chain_link	*link;
 	t_chain_link	*temp_link;
+	t_chain_link	*first_link;
 
-	current_int = 0;
-	link_id = 0;
 	link = make_new_chain_link(integer_array[current_int], link_id);
-	ft_printf("%d : %d\n", link->data, link->id);
+	first_link = link;
 	if (link == NULL)
 		return (EXIT_FAILURE);
-	current_int++;
-	while (current_int < argc - 1)
+	while (++current_int < argc - 1)
 	{
 		link_id++;
 		temp_link = make_new_chain_link(integer_array[current_int], link_id);
-		ft_printf("%d : %d\n", temp_link->data, temp_link->id);
 		if (temp_link == NULL)
 			return (free(link), EXIT_FAILURE);
 		link_chainlinks(link, temp_link);
 		link = temp_link;
-		current_int ++;
 	}
-	
+	link_chainlinks(link, first_link);
 	return (EXIT_SUCCESS);
 }
