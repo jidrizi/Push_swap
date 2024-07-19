@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 20:27:37 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/19 15:34:06 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct s_chain_link
 {
 	int					data;
+	int					id;
 	struct s_chain_link	*next;
 	struct s_chain_link	*prev;
 }t_chain_link;
