@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/19 17:59:13 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/20 13:59:24 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ t_chain_link		*make_linked_list(int *integer_arguments, int argc);
 void				sa(t_chain_link *a, int print);
 void				sb(t_chain_link *b, int print);
 void				ss(t_chain_link *a, t_chain_link *b);
+void				pa(t_chain_link *a, t_chain_link *b, int argc);
+void				ra(t_chain_link *a, int argc, int print);
+void				rb(t_chain_link *b, int argc, int print);
+void				rr(t_chain_link *a, t_chain_link *b, int argc);
 
 #endif

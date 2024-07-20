@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/19 17:46:58 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/20 13:24:01 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ HEADER = -I libft/
 DEPS = push_swap.h
 
 SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c swaps.c\
-		pushes.c #rotations.c reverse_rotations.c
+		pushes.c rotations.c #reverse_rotations.c
 
 OBJS = $(SRCS:%.c=bin/%.o)
 
-all: $(NAME)
+all: clean_when_debug $(NAME)
 
 bin :
 	@mkdir -p bin
@@ -52,4 +52,9 @@ fclean : clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re clean_when_debug
+
+ifeq ($(DEBUG),1)
+CFLAGS+=-g3
+clean_when_debug: fclean
+endif
