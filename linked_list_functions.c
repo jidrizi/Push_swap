@@ -6,13 +6,13 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:07:15 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/19 16:16:13 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/20 14:59:53 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_chain_link	*make_new_chain_link(int data, int link_id)
+t_chain_link	*make_new_chain_link(int data, int link_id)
 {
 	t_chain_link	*new_chain_link;
 

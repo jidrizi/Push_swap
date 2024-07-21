@@ -1,64 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotations.c                                        :+:      :+:    :+:   */
+/*   reverse_rotations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 21:08:12 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/21 15:01:17 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/20 14:13:53 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/21 15:33:38 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_chain_link *a, int argc, int print)
+void	rra(t_chain_link *a, int argc, int print)
 {
 	int	args;
 
-	a->id = a->prev->id;
-	a = a->next;
-	args = 1;
-	if (argc - 1 == 3)
-	{
-		a->id = 0;
-		a = a->next;
-		a->id = 1;
-		a = a->next;
-		a->id = 2;
-		ft_printf("ra\n");
-		return ;
-	}
+	args = 0;
 	while(args < argc - 1)
 	{
-		a->id -= 1;
+		a->id += 1;
 		a = a->next;
 		args++;
 	}
+	a->prev->id = 0;
 	if (print)
-		ft_printf("ra\n");
+		ft_printf("rra\n");
 }
 
-void	rb(t_chain_link *b, int argc, int print)
+void	rrb(t_chain_link *b, int argc, int print)
 {
 	int	args;
-	
-	b->id = b->prev->id;
-	b = b->next;
-	args = 1;
+
+	args = 0;
 	while(args < argc - 1)
 	{
-		b->id -= 1;
+		b->id += 1;
 		b = b->next;
 		args++;
 	}
+	b->prev->id = 0;
 	if (print)
-		ft_printf("rb\n");
+		ft_printf("rrb\n");
 }
 
-void	rr(t_chain_link *a, t_chain_link *b, int argc)
+void	rrr(t_chain_link *a, t_chain_link *b, int argc)
 {
-	ra(a, argc, false);
-	rb(b, argc, false);
-	ft_printf("rr\n");
+	rra(a, argc, false);
+	rrb(b, argc, false);
+	ft_printf("rrr\n");
 }
