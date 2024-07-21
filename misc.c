@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 20:09:34 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/21 20:25:44 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,18 @@ int	*make_args_int(int argc, char *argv[])
 		current_arg++;
 	}
 	return (integer_array);
+}
+
+int	check_if_sorted_from_start(int argc, char *argv[])
+{
+	int	current_arg;
+	
+	current_arg = 1;
+	while (current_arg < argc - 1)
+	{
+		if (ft_atoi(argv[current_arg]) > ft_atoi(argv[current_arg + 1]))
+			return (EXIT_FAILURE);
+		current_arg++;
+	}
+	return (EXIT_SUCCESS);
 }
