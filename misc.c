@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/22 13:12:23 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/22 17:18:44 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	*make_args_int(int argc, char *argv[])
 int	check_if_sorted_from_start(int argc, char *argv[])
 {
 	int	current_arg;
-	
+
 	current_arg = 1;
 	while (current_arg < argc - 1)
 	{
@@ -47,7 +47,7 @@ int	check_if_sorted_from_start(int argc, char *argv[])
 
 t_chain_link	*get_pointer_to_id(t_chain_link *stack, int id)
 {
-	while(stack->id != id)
+	while (stack->id != id)
 		stack = stack->next;
 	return (stack);
 }
