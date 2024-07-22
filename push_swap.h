@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/22 13:13:33 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/22 17:03:31 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ void				sa(t_chain_link *a, int print);
 void				sb(t_chain_link *b, int print);
 void				ss(t_chain_link *a, t_chain_link *b);
 void				pa(t_chain_link *a, t_chain_link *b, int argc);
-void				ra(t_chain_link *a, int argc, int print);
-void				rb(t_chain_link *b, int argc, int print);
-void				rr(t_chain_link *a, t_chain_link *b, int argc);
-void				rra(t_chain_link *a, int argc, int print);
-void				rrb(t_chain_link *b, int argc, int print);
-void				rrr(t_chain_link *a, t_chain_link *b, int argc);
-void				pb(t_chain_link *a, t_chain_link *b, int argc);
+void				ra(t_chain_link *a, int print);
+void				rb(t_chain_link *b, int print);
+void				rr(t_chain_link *a, t_chain_link *b);
+void				rra(t_chain_link *a, int print);
+void				rrb(t_chain_link *b, int print);
+void				rrr(t_chain_link *a, t_chain_link *b);
+void				pb(t_chain_link *a, t_chain_link *b);
 
 // Debugging
 void				print_stack(t_chain_link *stack);
