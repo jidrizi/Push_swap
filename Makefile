@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/21 19:22:05 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/22 13:06:27 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,14 @@ DEPS = push_swap.h
 SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c swaps.c\
 		pushes.c rotations.c reverse_rotations.c magic_number.c
 
+ifeq ($(DEBUG),1)
+CFLAGS+=-g3
+SRCS+=debug.c
+all: re
+endif
 OBJS = $(SRCS:%.c=bin/%.o)
 
-all: clean_when_debug $(NAME)
+all: $(NAME)
 
 bin :
 	@mkdir -p bin
@@ -53,8 +58,3 @@ fclean : clean
 re: fclean all
 
 .PHONY: all clean fclean re clean_when_debug
-
-ifeq ($(DEBUG),1)
-CFLAGS+=-g3
-clean_when_debug: fclean
-endif

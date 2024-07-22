@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/21 20:10:04 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/22 13:13:33 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int					*make_args_int(int argc, char *argv[]);
 int					check_if_sorted_from_start(int argc, char *argv[]);
 t_chain_link		*make_linked_list(int *integer_arguments, int argc);
 t_chain_link		*make_new_chain_link(int data, int link_id);
+void				link_chainlinks(t_chain_link *current_link,
+						t_chain_link *next_link);
+t_chain_link		*get_pointer_to_id(t_chain_link *stack, int id);
+
+// BASIC OPERATIONS
 void				sa(t_chain_link *a, int print);
 void				sb(t_chain_link *b, int print);
 void				ss(t_chain_link *a, t_chain_link *b);
@@ -48,5 +53,8 @@ void				rra(t_chain_link *a, int argc, int print);
 void				rrb(t_chain_link *b, int argc, int print);
 void				rrr(t_chain_link *a, t_chain_link *b, int argc);
 void				pb(t_chain_link *a, t_chain_link *b, int argc);
+
+// Debugging
+void				print_stack(t_chain_link *stack);
 
 #endif

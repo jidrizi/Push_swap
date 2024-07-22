@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:07:15 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/20 14:59:53 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/22 13:23:13 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_chain_link	*make_new_chain_link(int data, int link_id)
 	return (new_chain_link);
 }
 
-static void	link_chainlinks(t_chain_link *current_link, t_chain_link *next_link)
+void	link_chainlinks(t_chain_link *current_link, t_chain_link *next_link)
 {
 	current_link->next = next_link;
 	next_link->prev = current_link;
@@ -51,6 +51,5 @@ t_chain_link	*make_linked_list(int *integer_array, int argc)
 		link_chainlinks(link, temp_link);
 		link = temp_link;
 	}
-	link_chainlinks(link, first_link);
 	return (first_link);
 }
