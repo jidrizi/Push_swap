@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/24 19:43:39 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/24 19:45:22 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,5 @@ int	main(int argc, char *argv[])
 	if (a == NULL)
 		return (EXIT_FAILURE);
 	b = NULL;
-	// ft_printf("a:\n");
-	// print_stack(a);
-	// ft_printf("b:\n");
-	// print_stack(b);
 	return (0);
 }
