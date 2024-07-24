@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/23 14:29:56 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/24 20:14:28 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ HEADER = -I libft/
 DEPS = push_swap.h
 
 SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c swaps.c\
-		pushes.c rotations.c reverse_rotations.c magic_number.c
+		pushes.c rotations.c reverse_rotations.c magic_number.c\
+		utils_for_pushes.c
 
 ifeq ($(DEBUG),1)
 CFLAGS+=-g3

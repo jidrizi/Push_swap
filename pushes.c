@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:26:12 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/24 18:29:25 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/24 20:13:56 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	pa(t_chain_link **a, t_chain_link **b)
 {
 	t_chain_link	*og_a;
 	t_chain_link	*og_b;
-	int				last_id;
+
 	if (!(*b))
 		return ;
-	last_id = 0;
 	og_a = *a;
 	og_b = *b;
 	*b = (*b)->next;
@@ -33,37 +32,22 @@ void	pa(t_chain_link **a, t_chain_link **b)
 		(*a)->next->prev = *a;
 		(*a)->next->id = 1;
 	}
-	if (og_a && og_a->next)
-	{
-		(*a) = (*a)->next;
-		while((*a)->next)
-		{
-			(*a)->id = (*a)->prev->id + 1;
-			(*a) = (*a)->next;
-			last_id++;
-		}
-		(*a)->id = last_id + 1;
-	}
-	while ((*b) && (*b)->next)
-	{
-		(*b)->id -= 1;
-		(*b) = (*b)->next;
-	}
+	fix_index_after_push(og_a, a);
+	lower_id_by_one(b);
 	if (*b)
 		(*b)->id -= 1;
 	go_to_start(a);
 	go_to_start(b);
 	ft_printf("pa\n");
 }
+
 void	pb(t_chain_link **a, t_chain_link **b)
 {
 	t_chain_link	*og_a;
 	t_chain_link	*og_b;
-	int				last_id;
 
 	if (!(*a))
 		return ;
-	last_id = 0;
 	og_a = *a;
 	og_b = *b;
 	*a = (*a)->next;
@@ -77,22 +61,8 @@ void	pb(t_chain_link **a, t_chain_link **b)
 		(*b)->next->prev = *b;
 		(*b)->next->id = 1;
 	}
-	if (og_b && og_b->next)
-	{
-		(*b) = (*b)->next;
-		while((*b)->next)
-		{
-			(*b)->id = (*b)->prev->id + 1;
-			(*b) = (*b)->next;
-			last_id++;
-		}
-		(*b)->id = last_id + 1;
-	}
-	while ((*a) && (*a)->next)
-	{
-		(*a)->id -= 1;
-		(*a) = (*a)->next;
-	}
+	fix_index_after_push(og_b, b);
+	lower_id_by_one(a);
 	if (*a)
 		(*a)->id -= 1;
 	go_to_start(a);

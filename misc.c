@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/24 16:35:29 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/24 20:07:34 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,11 @@ int	check_if_sorted_from_start(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-void	go_to_start(t_chain_link **stack)
-{
-	while ((*stack) && (*stack)->prev)
-		*stack = (*stack)->prev;
-}
-
-void	go_to_end(t_chain_link **stack)
-{
-	while ((*stack) && (*stack)->next)
-		*stack = (*stack)->next;
-}
+// void	go_to_end(t_chain_link **stack)
+// {
+// 	while ((*stack) && (*stack)->next)
+// 		*stack = (*stack)->next;
+// }
 // t_chain_link	*get_pointer_to_id(t_chain_link *stack, int id)
 // {
 // 	while (stack->id != id)
