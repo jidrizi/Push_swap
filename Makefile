@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/22 13:06:27 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/23 14:29:56 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,6 @@ fclean : clean
 	@rm -f $(NAME)
 	@echo "$(NAME) removed"
 
-re: fclean all
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re clean_when_debug
