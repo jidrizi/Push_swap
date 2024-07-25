@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/24 20:16:03 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/25 19:05:04 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_chain_link
 // PROTOTYPES
 int				total_arguments_parsing(int argc, char *argv[]);
 int				*make_args_int(int argc, char *argv[]);
+void			remove_plus_signs(int argc, char *argv[]);
 int				check_if_sorted_from_start(int argc, char *argv[]);
 t_chain_link	*make_linked_list(int *integer_arguments, int argc);
 t_chain_link	*make_new_chain_link(int data, int link_id);

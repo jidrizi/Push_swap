@@ -6,11 +6,17 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/17 18:36:14 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/25 19:05:13 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	print_error(char *error_message)
+{
+	ft_printf("Error\n");
+	ft_putendl_fd(error_message, STDERR_FILENO);
+}
 
 static int	is_arg_digit(int argc, char *argv[])
 {
@@ -36,13 +42,16 @@ static int	is_arg_digit(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
+//made current arg into a static to fix norm error
 static int	is_arg_within_int_range(int argc, char *argv[])
 {
 	int	current_arg;
 	int	size_of_arg;
 
-	current_arg = 1;
-	while (current_arg < argc)
+	current_arg = 0;
+	remove_plus_signs(argc, argv);
+	current_arg = 0;
+	while (++current_arg < argc)
 	{
 		size_of_arg = ft_strlen(argv[current_arg]);
 		if (size_of_arg > 11)
@@ -53,7 +62,6 @@ static int	is_arg_within_int_range(int argc, char *argv[])
 		if (size_of_arg == 10
 			&& (ft_strncmp(argv[current_arg], "2147483647", 10) > 0))
 			return (EXIT_FAILURE);
-		current_arg++;
 	}
 	return (EXIT_SUCCESS);
 }
@@ -68,6 +76,7 @@ static int	is_arg_duplicate(int argc, char *argv[])
 	while (++current_arg < argc)
 	{
 		next_args = current_arg;
+			
 		while (++next_args < argc)
 		{
 			if (ft_strncmp(argv[current_arg], argv[next_args], 11) == 0)
@@ -77,13 +86,14 @@ static int	is_arg_duplicate(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
+
 int	total_arguments_parsing(int argc, char *argv[])
 {
 	if (is_arg_digit(argc, argv) == EXIT_FAILURE)
-		return (ft_printf("Error\nOnly numbers allowed\n"), EXIT_FAILURE);
+		return (print_error("Only digits allowed"), EXIT_FAILURE);
 	if (is_arg_within_int_range(argc, argv) == EXIT_FAILURE)
-		return (ft_printf("Error\nNumber out of int range\n"), EXIT_FAILURE);
+		return (print_error("Arguments not in int range"), EXIT_FAILURE);
 	if (is_arg_duplicate(argc, argv) == EXIT_FAILURE)
-		return (ft_printf("Error\nDuplicates\n"), EXIT_FAILURE);
+		return (print_error("Arguments can't be duplicates"), EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }

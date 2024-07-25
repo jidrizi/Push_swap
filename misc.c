@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/24 20:07:34 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/25 19:03:53 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,23 @@ int	check_if_sorted_from_start(int argc, char *argv[])
 	}
 	return (EXIT_SUCCESS);
 }
-
+void	remove_plus_signs(int argc, char *argv[])
+{
+	int	current_arg;
+	int	x;
+	
+	current_arg = 0;
+	x = -1;
+	while (++current_arg < argc)
+	{
+		if (current_arg < argc && argv[current_arg][0] == '+')
+		{
+			while (argv[current_arg][++x] != '\0')
+				argv[current_arg][x] = argv[current_arg][x + 1];
+			x = -1;
+		}
+	}
+}
 // void	go_to_end(t_chain_link **stack)
 // {
 // 	while ((*stack) && (*stack)->next)
