@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/25 19:05:13 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/25 19:10:58 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static int	is_arg_digit(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-//made current arg into a static to fix norm error
 static int	is_arg_within_int_range(int argc, char *argv[])
 {
 	int	current_arg;
@@ -76,7 +75,6 @@ static int	is_arg_duplicate(int argc, char *argv[])
 	while (++current_arg < argc)
 	{
 		next_args = current_arg;
-			
 		while (++next_args < argc)
 		{
 			if (ft_strncmp(argv[current_arg], argv[next_args], 11) == 0)
@@ -85,7 +83,6 @@ static int	is_arg_duplicate(int argc, char *argv[])
 	}
 	return (EXIT_SUCCESS);
 }
-
 
 int	total_arguments_parsing(int argc, char *argv[])
 {
