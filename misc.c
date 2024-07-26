@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 18:50:30 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 18:55:33 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,14 @@ int	check_if_stack_sorted(t_chain_link *stack)
 }
 
 //used in sort_5_numbers to check if the last data is the smallest
-void	if_last_data_smallest(t_chain_link **a)
+int	if_last_data_smallest(t_chain_link **a)
 {
 	if ((*a)->next->next->next->next->data < (*a)->next->next->next->data &&
 	(*a)->next->next->next->next->data < (*a)->next->next->data &&
 	(*a)->next->next->next->next->data < (*a)->next->data
 	&& (*a)->next->next->next->next->data < (*a)->data)
-		rra(*a, true);
+		return (rra(*a, true), EXIT_SUCCESS);
+	return (EXIT_FAILURE);
 }
 
 //used in sort_4_numbers to rotate until the smallest data is first

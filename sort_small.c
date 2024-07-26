@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:21:51 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 18:50:43 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 18:56:52 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static void	sort_4_numbers(t_chain_link **a, t_chain_link **b)
 
 static void	sort_5_numbers(t_chain_link **a, t_chain_link **b)
 {
-	
+	if (if_last_data_smallest(a) == EXIT_FAILURE)
+		rotate_until_smallest_first(a);
 	pb(a, b);
 	sort_4_numbers(a, b);
 	pa(a, b);
