@@ -6,16 +6,12 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/25 19:10:11 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 13:34:00 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-	// ft_printf("a:\n");
-	// print_stack(a);
-	// ft_printf("b:\n");
-	// print_stack(b);
 int	main(int argc, char *argv[])
 {
 	t_chain_link	*a;
@@ -34,5 +30,13 @@ int	main(int argc, char *argv[])
 	if (a == NULL)
 		return (EXIT_FAILURE);
 	b = NULL;
+	if (argc <= 6)
+		sort_small_stack(&a, &b, argc);
+	// else
+	// 	sort_big_stack(&a, &b, argc);
+	ft_printf("A: \n");
+	print_stack(a);
+	ft_printf("B: \n");
+	print_stack(b);
 	return (0);
 }
