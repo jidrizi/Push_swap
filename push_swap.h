@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 15:40:57 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 18:51:31 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_chain_link
 // PROTOTYPES
 int				total_arguments_parsing(int argc, char *argv[]);
 int				*make_args_int(int argc, char *argv[]);
-void			remove_plus_signs(int argc, char *argv[]);
 int				check_if_sorted_from_start(int argc, char *argv[]);
 t_chain_link	*make_linked_list(int *integer_arguments, int argc);
 t_chain_link	*make_new_chain_link(int data, int link_id);
@@ -48,6 +47,8 @@ void			fix_index_after_push(t_chain_link *og_first_link,
 					t_chain_link **stack);
 void			sort_small_stack(t_chain_link **a, t_chain_link **b, int argc);
 int				check_if_stack_sorted(t_chain_link *stack);
+void			if_last_data_smallest(t_chain_link **a);
+void			rotate_until_smallest_first(t_chain_link **a);
 
 // BASIC OPERATIONS
 void			sa(t_chain_link *a, int print);

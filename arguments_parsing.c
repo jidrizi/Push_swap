@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/25 19:10:58 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 18:48:03 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,24 @@ static void	print_error(char *error_message)
 {
 	ft_printf("Error\n");
 	ft_putendl_fd(error_message, STDERR_FILENO);
+}
+
+static void	remove_plus_signs(int argc, char *argv[])
+{
+	int	current_arg;
+	int	x;
+
+	current_arg = 0;
+	x = -1;
+	while (++current_arg < argc)
+	{
+		if (current_arg < argc && argv[current_arg][0] == '+')
+		{
+			while (argv[current_arg][++x] != '\0')
+				argv[current_arg][x] = argv[current_arg][x + 1];
+			x = -1;
+		}
+	}
 }
 
 static int	is_arg_digit(int argc, char *argv[])

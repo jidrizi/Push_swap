@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 15:37:00 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 18:50:30 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,23 @@ int	check_if_stack_sorted(t_chain_link *stack)
 	return (EXIT_SUCCESS);
 }
 
-void	remove_plus_signs(int argc, char *argv[])
+//used in sort_5_numbers to check if the last data is the smallest
+void	if_last_data_smallest(t_chain_link **a)
 {
-	int	current_arg;
-	int	x;
-
-	current_arg = 0;
-	x = -1;
-	while (++current_arg < argc)
-	{
-		if (current_arg < argc && argv[current_arg][0] == '+')
-		{
-			while (argv[current_arg][++x] != '\0')
-				argv[current_arg][x] = argv[current_arg][x + 1];
-			x = -1;
-		}
-	}
+	if ((*a)->next->next->next->next->data < (*a)->next->next->next->data &&
+	(*a)->next->next->next->next->data < (*a)->next->next->data &&
+	(*a)->next->next->next->next->data < (*a)->next->data
+	&& (*a)->next->next->next->next->data < (*a)->data)
+		rra(*a, true);
 }
+
+//used in sort_4_numbers to rotate until the smallest data is first
+void	rotate_until_smallest_first(t_chain_link **a)
+{
+	while (!((*a)->data < (*a)->next->data &&
+	(*a)->data < (*a)->next->next->data &&
+	(*a)->data < (*a)->next->next->next->data &&
+	(*a)->data < (*a)->next->next->next->next->data))
+		ra(*a, true);
+}
+
