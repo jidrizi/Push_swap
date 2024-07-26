@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:21:51 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 18:56:52 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 20:48:56 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,8 @@ static void	sort_3_numbers(t_chain_link *a)
 //the while loop does ra until the first element has the smallest data
 static void	sort_4_numbers(t_chain_link **a, t_chain_link **b)
 {
-	while (!((*a)->data < (*a)->next->data &&
-	(*a)->data < (*a)->next->next->data &&
-	(*a)->data < (*a)->next->next->next->data))
-		ra(*a, true);
+	if (if_last_datas_smallest(a, 4) == EXIT_FAILURE)
+		rotate_until_smallest_first(a, 4);
 	pb(a, b);
 	sort_3_numbers(*a);
 	pa(a, b);
@@ -53,8 +51,8 @@ static void	sort_4_numbers(t_chain_link **a, t_chain_link **b)
 
 static void	sort_5_numbers(t_chain_link **a, t_chain_link **b)
 {
-	if (if_last_data_smallest(a) == EXIT_FAILURE)
-		rotate_until_smallest_first(a);
+	if (if_last_datas_smallest(a, 5) == EXIT_FAILURE)
+		rotate_until_smallest_first(a, 5);
 	pb(a, b);
 	sort_4_numbers(a, b);
 	pa(a, b);
@@ -72,5 +70,3 @@ void	sort_small_stack(t_chain_link **a, t_chain_link **b, int argc)
 	if (argc == 6)
 		sort_5_numbers(a, b);
 }
-
-
