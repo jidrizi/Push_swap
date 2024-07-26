@@ -6,13 +6,14 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:21:51 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 15:12:34 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 15:20:08 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//made all the datas constants because i dont like fixing norm errors xD
+//made all the datas constants because it looks nicer
+// when i declare them in the start xD
 static void	sort_3_numbers(t_chain_link *a)
 {
 	const int	data1 = a->data;
