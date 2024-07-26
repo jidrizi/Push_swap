@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 13:21:45 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 15:37:00 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_if_sorted_from_start(int argc, char *argv[])
 	return (EXIT_SUCCESS);
 }
 
-int	check_if_sorted(t_chain_link *stack)
+int	check_if_stack_sorted(t_chain_link *stack)
 {
 	while (stack->next)
 	{

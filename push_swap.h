@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 14:44:21 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/26 15:40:57 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void			lower_id_by_one(t_chain_link **stack);
 void			fix_index_after_push(t_chain_link *og_first_link,
 					t_chain_link **stack);
 void			sort_small_stack(t_chain_link **a, t_chain_link **b, int argc);
-int				check_if_sorted(t_chain_link *stack);
+int				check_if_stack_sorted(t_chain_link *stack);
 
 // BASIC OPERATIONS
 void			sa(t_chain_link *a, int print);
