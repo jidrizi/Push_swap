@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/27 15:30:41 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/27 15:38:29 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	if_last_datas_smallest(t_chain_link **a, int element_count)
 {
 	int	last_data;
 	int	second_last_data;
-	
+
 	while ((*a)->next)
 		*a = (*a)->next;
 	last_data = (*a)->data;
