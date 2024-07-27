@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 20:48:47 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/27 15:30:41 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,38 +56,36 @@ int	check_if_stack_sorted(t_chain_link *stack)
 	return (EXIT_SUCCESS);
 }
 
-//used in sort_5_numbers to check if the last data or 2nd last data is 
-//the smallest
-int	if_last_datas_smallest(t_chain_link **a, int number)
+// used in sort_5_numbers and in sort_4_numbers to check if the last data 
+// or 2nd last data is the smallest
+int	if_last_datas_smallest(t_chain_link **a, int element_count)
 {
-	if (number == 4)
-	{
-		if ((*a)->next->next->next->data < (*a)->next->next->data
-			&& (*a)->next->next->next->data < (*a)->next->data
-			&& (*a)->next->next->next->data < (*a)->data)
-			return (rra(*a, true), EXIT_SUCCESS);
-		if ((*a)->next->next->data < (*a)->next->data
-			&& (*a)->next->next->data < (*a)->data)
-			return (rra(*a, true), rra(*a, true), EXIT_SUCCESS);
-		return (EXIT_FAILURE);
-	}
-	if ((*a)->next->next->next->next->data < (*a)->next->next->next->data
-		&& (*a)->next->next->next->next->data < (*a)->next->next->data
-		&& (*a)->next->next->next->next->data < (*a)->next->data
-		&& (*a)->next->next->next->next->data < (*a)->data)
+	int	last_data;
+	int	second_last_data;
+	
+	while ((*a)->next)
+		*a = (*a)->next;
+	last_data = (*a)->data;
+	second_last_data = (*a)->prev->data;
+	while ((*a)->prev)
+		*a = (*a)->prev;
+	if (last_data < second_last_data
+		&& last_data < (*a)->next->data
+		&& last_data < (*a)->data
+		&& (element_count == 4 || last_data < (*a)->next->next->data))
 		return (rra(*a, true), EXIT_SUCCESS);
-	if ((*a)->next->next->next->data < (*a)->next->next->next->next->data
-		&& (*a)->next->next->next->data < (*a)->next->next->data
-		&& (*a)->next->next->next->data < (*a)->next->data
-		&& (*a)->next->next->next->data < (*a)->data)
+	if (second_last_data < last_data
+		&& second_last_data < (*a)->next->data
+		&& second_last_data < (*a)->data
+		&& (element_count == 4 || second_last_data < (*a)->next->next->data))
 		return (rra(*a, true), rra(*a, true), EXIT_SUCCESS);
 	return (EXIT_FAILURE);
 }
 
 //used in sort_5_numbers to rotate until the smallest data is first
-void	rotate_until_smallest_first(t_chain_link **a, int number)
+void	rotate_until_smallest_first(t_chain_link **a, int number_of_elements)
 {
-	if (number == 4)
+	if (number_of_elements == 4)
 	{
 		while (!((*a)->data < (*a)->next->data
 				&& (*a)->data < (*a)->next->next->data
