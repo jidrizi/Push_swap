@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 20:45:19 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/27 15:44:00 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	main(int argc, char *argv[])
 	b = NULL;
 	if (argc <= 6)
 		sort_small_stack(&a, &b, argc);
-	// else
-	// 	sort_big_stack(&a, &b, argc);
+	else
+		sort_big_stack(&a, &b);
 	ft_printf("A: \n");
 	print_stack(a);
 	ft_printf("B: \n");
