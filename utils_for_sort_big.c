@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 18:34:03 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 19:17:26 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:27:07 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,11 @@ void	make_id_for_big_stack(t_chain_link **stack)
 		smallest->id = index++;
 		moving_stack = moving_stack->next;
 	}
+}
+
+//not needed for sort_big but i had no where else to put it
+void	print_error(char *error_message)
+{
+	ft_printf("Error\n");
+	ft_putendl_fd(error_message, STDERR_FILENO);
 }

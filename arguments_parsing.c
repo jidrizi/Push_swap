@@ -6,17 +6,11 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 14:18:02 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 18:48:03 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:26:24 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	print_error(char *error_message)
-{
-	ft_printf("Error\n");
-	ft_putendl_fd(error_message, STDERR_FILENO);
-}
 
 static void	remove_plus_signs(int argc, char *argv[])
 {
