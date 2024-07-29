@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 14:24:26 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/29 19:04:01 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/29 19:18:41 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,7 @@ SRCS = main.c arguments_parsing.c linked_list_functions.c misc.c swaps.c\
 		pushes.c rotations.c reverse_rotations.c\
 		sort_small.c sort_big.c utils_for_sort_big.c\
 
-ifeq ($(DEBUG),1)
-CFLAGS+=-g3
-SRCS+=debug.c
-all: re
-endif
+
 OBJS = $(SRCS:%.c=bin/%.o)
 
 all: $(NAME)

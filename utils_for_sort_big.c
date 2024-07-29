@@ -6,13 +6,13 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 18:34:03 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/28 14:01:20 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:17:26 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void set_ids_to_minus_one(t_chain_link *stack)
+static void	set_ids_to_minus_one(t_chain_link *stack)
 {
 	while (stack->next != NULL)
 	{

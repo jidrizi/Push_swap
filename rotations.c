@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 21:08:12 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 18:08:15 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:16:48 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ra(t_chain_link *a, int print)
 {
 	int	first_data;
-	int first_id;
+	int	first_id;
 
 	if (!a || !a->next)
 		return ;
@@ -36,7 +36,7 @@ void	ra(t_chain_link *a, int print)
 void	rb(t_chain_link *b, int print)
 {
 	int	first_data;
-	int first_id;
+	int	first_id;
 
 	if (!b || !b->next)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:26:12 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 19:09:41 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:16:36 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	go_to_start(t_chain_link **stack)
 	while (*stack && (*stack)->prev)
 		*stack = (*stack)->prev;
 }
+
 void	pa(t_chain_link **a, t_chain_link **b)
 {
 	t_chain_link	*og_a;
