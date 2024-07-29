@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 20:30:30 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:09:59 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ t_chain_link	*make_new_chain_link(int data, int link_id);
 void			link_chainlinks(t_chain_link *current_link,
 					t_chain_link *next_link);
 t_chain_link	*get_pointer_to_id(t_chain_link *stack, int id);
-void			go_to_start(t_chain_link **stack);
-// void			go_to_end(t_chain_link *stack);
 void			lower_id_by_one(t_chain_link **stack);
 void			fix_index_after_push(t_chain_link *og_first_link,
 					t_chain_link **stack);
@@ -49,6 +47,10 @@ void			sort_small_stack(t_chain_link **a, t_chain_link **b, int argc);
 int				check_if_stack_sorted(t_chain_link *stack);
 int				if_last_datas_smallest(t_chain_link **a, int number);
 void			rotate_until_smallest_first(t_chain_link **a, int number);
+void			sort_big_stack(t_chain_link **a, t_chain_link **b);
+void			make_id_for_big_stack(t_chain_link **stack);
+void			free_link_list(t_chain_link *link);
+
 
 // BASIC OPERATIONS
 void			sa(t_chain_link *a, int print);

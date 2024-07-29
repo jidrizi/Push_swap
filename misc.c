@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/27 15:38:29 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/27 19:05:16 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ int	if_last_datas_smallest(t_chain_link **a, int element_count)
 	return (EXIT_FAILURE);
 }
 
-//used in sort_5_numbers to rotate until the smallest data is first
+//used in sort_5_numbers and sort_4_numbers
+//  to rotate until the smallest data is first
 void	rotate_until_smallest_first(t_chain_link **a, int number_of_elements)
 {
 	if (number_of_elements == 4)

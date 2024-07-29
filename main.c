@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/27 15:44:00 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/29 19:11:38 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int	main(int argc, char *argv[])
 		return (EXIT_SUCCESS);
 	if (check_if_sorted_from_start(argc, argv) == EXIT_SUCCESS)
 		return (EXIT_SUCCESS);
-	a = (t_chain_link *)ft_calloc(1, sizeof(t_chain_link));
-	if (a == NULL)
-		return (EXIT_FAILURE);
 	a = make_linked_list(make_args_int(argc, argv), argc);
 	if (a == NULL)
 		return (EXIT_FAILURE);
@@ -34,9 +31,7 @@ int	main(int argc, char *argv[])
 		sort_small_stack(&a, &b, argc);
 	else
 		sort_big_stack(&a, &b);
-	ft_printf("A: \n");
-	print_stack(a);
-	ft_printf("B: \n");
-	print_stack(b);
+	free_link_list(a);
+	free_link_list(b);
 	return (0);
 }
