@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 19:21:51 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/26 20:48:56 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/30 14:20:52 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ static void	sort_5_numbers(t_chain_link **a, t_chain_link **b)
 	sort_4_numbers(a, b);
 }
 
-void	sort_small_stack(t_chain_link **a, t_chain_link **b, int argc)
+void	sort_small_stack(t_chain_link **a, t_chain_link **b, int elements_nbr)
 {
-	if (argc == 3)
+	if (elements_nbr == 2)
 		sa(*a, true);
-	if (argc == 4)
+	if (elements_nbr == 3)
 		sort_3_numbers(*a);
-	if (argc == 5)
+	if (elements_nbr == 4)
 		sort_4_numbers(a, b);
-	if (argc == 6)
+	if (elements_nbr == 5)
 		sort_5_numbers(a, b);
 }

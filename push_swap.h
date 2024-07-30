@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:28 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 19:27:21 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/30 17:45:01 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,14 @@ typedef struct s_chain_link
 }t_chain_link;
 
 // PROTOTYPES
-int				total_arguments_parsing(int argc, char *argv[]);
-int				*make_args_int(int argc, char *argv[]);
-int				check_if_sorted_from_start(int argc, char *argv[]);
-t_chain_link	*make_linked_list(int *integer_arguments, int argc);
+char			**split_elements(char *argv[]);
+int				get_new_argc(char **element_array);
+int				total_arguments_parsing(int number_of_elements,
+					char **element_array);
+int				*make_args_int(int number_of_elements, char **element_array);
+int				check_if_sorted_from_start(int number_of_elements,
+					int *integer_array);
+t_chain_link	*make_linked_list(int *integer_array, int number_of_elements);
 t_chain_link	*make_new_chain_link(int data, int link_id);
 void			link_chainlinks(t_chain_link *current_link,
 					t_chain_link *next_link);
@@ -64,8 +68,5 @@ void			rrb(t_chain_link *b, int print);
 void			rrr(t_chain_link *a, t_chain_link *b);
 void			pb(t_chain_link **a, t_chain_link **b);
 void			pa(t_chain_link **a, t_chain_link **b);
-
-// Debugging
-void			print_stack(t_chain_link *stack);
 
 #endif

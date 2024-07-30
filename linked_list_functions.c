@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 19:07:15 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 19:05:44 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/30 17:38:55 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	link_chainlinks(t_chain_link *current_link, t_chain_link *next_link)
 	next_link->prev = current_link;
 }
 
-t_chain_link	*make_linked_list(int *integer_array, int argc)
+t_chain_link	*make_linked_list(int *integer_array, int number_of_elements)
 {
 	static int		current_int = 0;
 	static int		link_id = 0;
@@ -42,7 +42,7 @@ t_chain_link	*make_linked_list(int *integer_array, int argc)
 	first_link = link;
 	if (link == NULL)
 		return (free(integer_array), NULL);
-	while (++current_int < argc - 1)
+	while (++current_int < number_of_elements)
 	{
 		link_id++;
 		temp_link = make_new_chain_link(integer_array[current_int], link_id);
