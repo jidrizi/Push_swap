@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/30 17:44:41 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/31 15:41:09 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,21 @@ static int	check_duplicates(int *integer_array, int number_of_elements)
 	return (EXIT_SUCCESS);
 }
 
+void	free_array(char **element_array)
+{
+	int	i;
+
+	i = 0;
+	while (element_array[i])
+	{
+		free(element_array[i]);
+		element_array[i] = NULL;
+		i++;
+	}
+	free(element_array);
+}
+
+//we make argc only count the numbers and  not count the executable too
 int	main(int argc, char *argv[])
 {
 	t_chain_link	*a;
@@ -48,9 +63,9 @@ int	main(int argc, char *argv[])
 	element_array = split_elements(argv);
 	argc = get_new_argc(element_array);
 	if (total_arguments_parsing(argc, element_array) == 1)
-		return (EXIT_FAILURE);
+		return (free_array(element_array), EXIT_FAILURE);
 	if (argc == 0 || argc == 1)
-		return (EXIT_SUCCESS);
+		return (free_array(element_array), EXIT_SUCCESS);
 	integer_array = make_args_int(argc, element_array);
 	if (check_duplicates(integer_array, argc) == EXIT_FAILURE)
 		return (free(integer_array), EXIT_FAILURE);

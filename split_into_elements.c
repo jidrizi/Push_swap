@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 13:44:42 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/30 17:49:29 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/31 15:29:25 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ char	**split_elements(char *argv[])
 {
 	char	*result;
 	char	*temp;
+	char	**elements;
 	int		x;
 
 	x = 1;
@@ -38,7 +39,7 @@ char	**split_elements(char *argv[])
 		result = temp;
 		x++;
 	}
-	return (ft_split(result, ' '));
+	return (elements = ft_split(result, ' '), free(result), elements);
 }
 
 int	get_new_argc(char **element_array)

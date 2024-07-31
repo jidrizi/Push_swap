@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 18:14:04 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/30 17:27:54 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/31 15:31:52 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	*make_args_int(int number_of_elements, char **element_array)
 		integer_array[current_arg] = atoi_arg;
 		current_arg++;
 	}
+	free_array(element_array);
 	return (integer_array);
 }
 
