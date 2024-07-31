@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 14:21:08 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/31 15:41:09 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/31 15:52:08 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ int	main(int argc, char *argv[])
 	argc = get_new_argc(element_array);
 	if (total_arguments_parsing(argc, element_array) == 1)
 		return (free_array(element_array), EXIT_FAILURE);
-	if (argc == 0 || argc == 1)
+	if (argc == 0)
+		return (EXIT_SUCCESS);
+	if (argc == 1)
 		return (free_array(element_array), EXIT_SUCCESS);
 	integer_array = make_args_int(argc, element_array);
 	if (check_duplicates(integer_array, argc) == EXIT_FAILURE)
@@ -75,9 +77,7 @@ int	main(int argc, char *argv[])
 	if (a == NULL)
 		return (EXIT_FAILURE);
 	b = NULL;
-	if (argc <= 5)
-		sort_small_stack(&a, &b, argc);
-	else
-		sort_big_stack(&a, &b);
+	sort_small_stack(&a, &b, argc);
+	sort_big_stack(&a, &b, argc);
 	return (free_link_list(a), free_link_list(b), 0);
 }

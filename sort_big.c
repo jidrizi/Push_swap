@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/29 19:18:03 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/29 19:18:10 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/31 15:51:20 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,11 @@ static void	radix_sort(t_chain_link **a, t_chain_link **b)
 	}
 }
 
-void	sort_big_stack(t_chain_link **a, t_chain_link **b)
+void	sort_big_stack(t_chain_link **a, t_chain_link **b, int argc)
 {
-	make_id_for_big_stack(a);
-	radix_sort(a, b);
+	if (argc > 5)
+	{
+		make_id_for_big_stack(a);
+		radix_sort(a, b);
+	}
 }
